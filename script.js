@@ -7,6 +7,9 @@ const timeBlocks = document.querySelectorAll('.time-block');
 
 timeBlocks.forEach((timeBlocks) => {
 const hour = parseInt(timeBlocks.id.split('-')[1]);
+
+if (hour < currentHour) {
+  timeBlocks.classList.add('past'); }
 });
  
 
