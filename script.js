@@ -1,5 +1,5 @@
 let today = dayjs();
-$('#currentDay').text(today.format('MMM D, YYYY'));
+$('#currentDay').text(today.format('MMM D, YYYY, h:mm A'));
 
 
 
