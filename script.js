@@ -5,7 +5,10 @@ let currentHour = today.hour();
 
 const timeBlocks = document.querySelectorAll('.time-block');
 
-
+timeBlocks.forEach((timeBlocks) => {
+const hour = parseInt(timeBlocks.id.split('-')[1]);
+});
+ 
 
 // Call the timeColor function to apply the class when the page loads
 ;
