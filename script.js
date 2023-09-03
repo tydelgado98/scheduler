@@ -1,19 +1,10 @@
 let today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY, h:mm A'));
 
-$('#time-block').each(function () {
-  let currentHour = dayjs().hour();
-  let hour = $(this).attr('id');
-  if (currentHour > hour) {
-    $(this).addClass('past');
-  }
-  if (currentHour === hour) {
-    $(this).addClass('present');
-  }
-  if (currentHour < hour) {
-    $(this).addClass('future');
-  }
-});
+
+
+
+
 
 // Call the timeColor function to apply the class when the page loads
 ;
