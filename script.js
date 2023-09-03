@@ -9,7 +9,10 @@ timeBlocks.forEach((timeBlocks) => {
 const hour = parseInt(timeBlocks.id.split('-')[1]);
 
 if (hour < currentHour) {
-  timeBlocks.classList.add('past'); }
+  timeBlocks.classList.add('past'); 
+} else if (hour === currentHour) {
+  timeBlocks.classList.add('present');
+}
 });
  
 
