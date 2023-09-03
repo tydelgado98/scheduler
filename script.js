@@ -2,12 +2,15 @@ let today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY, h:mm A'));
 
 $('#time-block').each(function () {
-  if (today.hour()> $(this).attr('id')) {
+  let currentHour = dayjs().hour();
+  let hour = $(this).attr('id');
+  if (currentHour > hour) {
     $(this).addClass('past');
-  } else if (today.hour() == $(this).attr('id')) {
+  }
+  if (currentHour === hour) {
     $(this).addClass('present');
   }
-  else {
+  if (currentHour < hour) {
     $(this).addClass('future');
   }
 });
