@@ -1,7 +1,14 @@
 let today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY, h:mm A'));
 
+function timeColor() {
+  if (today.hour() > 9) { 
+    $('#time-block').addClass('past');
+  }
+}
 
+// Call the timeColor function to apply the class when the page loads
+timeColor();
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
