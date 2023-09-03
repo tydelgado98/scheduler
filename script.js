@@ -1,14 +1,19 @@
 let today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY, h:mm A'));
 
-function timeColor() {
-  if (today.hour() > 9) { 
-    $('#time-block').addClass('past');
+$('#time-block').each(function () {
+  if (today.hour()> $(this).attr('id')) {
+    $(this).addClass('past');
+  } else if (today.hour() == $(this).attr('id')) {
+    $(this).addClass('present');
   }
-}
+  else {
+    $(this).addClass('future');
+  }
+});
 
 // Call the timeColor function to apply the class when the page loads
-timeColor();
+;
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
