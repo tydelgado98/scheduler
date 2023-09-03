@@ -12,6 +12,8 @@ if (hour < currentHour) {
   timeBlocks.classList.add('past'); 
 } else if (hour === currentHour) {
   timeBlocks.classList.add('present');
+} else {
+  timeBlocks.classList.add('future');
 }
 });
  
