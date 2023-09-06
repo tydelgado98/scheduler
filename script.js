@@ -18,21 +18,6 @@ if (hour < currentHour) {
 });
  
 
-
-$(function () {
-  
-  }
-
-  
- 
-  
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-
-);
-
 let saveBtn = $('.saveBtn');
 
 
@@ -42,9 +27,20 @@ function handleTxt(event)  {
 
  let txt = $(this).siblings('.description').val();
   localStorage.setItem("Hour: " + block, txt);
+let description = $(this).siblings('.description').val();
 
-  $(this).siblings('.description').text(txt);
+for (let i = 0; i < description.length; i+= 1) {
+  let hour = localStorage.getItem("Hour: " + i);
+  $("#hour" + i + " .description").val(hour);
+}
+
   console.log(txt);
+
+  // TODO: Add code to get any user input that was saved in localStorage and set
+  // the values of the corresponding textarea elements. HINT: How can the id
+  // attribute of each time-block be used to do this?
+
+
   if (!txt) {
     return;
   }
