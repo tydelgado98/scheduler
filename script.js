@@ -49,10 +49,10 @@ let saveBtn = $('.saveBtn');
 
 
 function handleTxt(event)  {
- 
+ let block = $(this).parent().attr('id');
   event.preventDefault();
  let txt = $(this).siblings('.description').val();
-  localStorage.setItem(timeBlocks.id, txt);
+  localStorage.setItem(" hour" + block, txt);
 
  
   
