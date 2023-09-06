@@ -52,7 +52,7 @@ function handleTxt(event)  {
  let block = $(this).parent().attr('id');
   event.preventDefault();
  let txt = $(this).siblings('.description').val();
-  localStorage.setItem("hour " + block, txt);
+  localStorage.setItem("Hour: " + block, txt);
 
  
   
