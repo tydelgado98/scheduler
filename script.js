@@ -53,8 +53,12 @@ function handleTxt(event)  {
   event.preventDefault();
   let txt = $('.description').val();
   localStorage.setItem('text', txt);
+  
   console.log(txt);
   if (!txt) {
     return;
   }
 }
+
+let txt = localStorage.getItem('text');
+
