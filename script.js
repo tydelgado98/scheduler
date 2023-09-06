@@ -26,9 +26,9 @@ let saveBtn = $('.saveBtn');
 function handleTxt(event)  {
  let block = $(this).parent().attr('id');
   event.preventDefault();
-
- let txt = $(this).siblings('.description').val();
+  let txt = $(this).siblings('.description').val();
   localStorage.setItem("Hour: " + block, txt);
+  
   console.log(txt);
   if (!txt) {
     return;
@@ -36,6 +36,19 @@ function handleTxt(event)  {
 
   alert("Saved!");
 }
+
+function retrieveText() {
+  saveBtn.each(function() {
+    let block = $(this).parent().attr('id');
+    let txt = localStorage.getItem("Hour: " + block);
+    $(this).siblings('.description').val(txt);
+  });
+}
+
+$(document).ready(function() {
+  retrieveText();
+}
+);
 
 let txt = localStorage.getItem('text');
 
