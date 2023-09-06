@@ -19,10 +19,6 @@ if (hour < currentHour) {
  
 
 
-$(document).ready(function() {
-let text = localStorage.getItem('Hour: 9');
-$('#9').textContent(text);
-});
 
 let saveBtn = $('.saveBtn');
 
@@ -33,12 +29,12 @@ function handleTxt(event)  {
 
  let txt = $(this).siblings('.description').val();
   localStorage.setItem("Hour: " + block, txt);
-
-  $(this).siblings('.description').text(txt);
   console.log(txt);
   if (!txt) {
     return;
   }
+
+  alert("Saved!");
 }
 
 let txt = localStorage.getItem('text');
