@@ -46,14 +46,13 @@ $(function () {
 );
 
 let saveBtn = $('.saveBtn');
-saveBtn.on('click');
+
 
 function handleTxt(event)  {
  
   event.preventDefault();
-  let txt = $('.description').val();
+ let txt = $(this).siblings('.description').val();
   localStorage.setItem('text', txt);
-  
   console.log(txt);
   if (!txt) {
     return;
@@ -62,3 +61,4 @@ function handleTxt(event)  {
 
 let txt = localStorage.getItem('text');
 
+saveBtn.on('click', handleTxt);
