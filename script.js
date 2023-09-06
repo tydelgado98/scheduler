@@ -27,12 +27,7 @@ function handleTxt(event)  {
 
  let txt = $(this).siblings('.description').val();
   localStorage.setItem("Hour: " + block, txt);
-let description = $(this).siblings('.description').val();
-
-for (let i = 0; i < description.length; i+= 1) {
-  let hour = localStorage.getItem("Hour: " + i);
-  $("#hour" + i + " .description").val(hour);
-}
+// let description = $(this).siblings('.description').val();
 
   console.log(txt);
 
@@ -47,5 +42,7 @@ for (let i = 0; i < description.length; i+= 1) {
 }
 
 let txt = localStorage.getItem('text');
+let description = $(this).siblings('.description').val();
+$(description).text = txt;
 
 saveBtn.on('click', handleTxt);
