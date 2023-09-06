@@ -19,12 +19,10 @@ if (hour < currentHour) {
  
 
 
-$(function () {
-  let txting = JSON.parse(localStorage.getItem('txt')) || [];
-  $(this).siblings('.description').val();
-  console.log(txting);
-  }
-);
+$(document).ready(function() {
+let text = localStorage.getItem('Hour: 9');
+$('#9').textContent(text);
+});
 
 let saveBtn = $('.saveBtn');
 
@@ -34,23 +32,15 @@ function handleTxt(event)  {
   event.preventDefault();
 
  let txt = $(this).siblings('.description').val();
+  localStorage.setItem("Hour: " + block, txt);
 
-  let valu = JSON.parse(localStorage.getItem('txt')) || [];
-  valu.push(txt);
-  localStorage.setItem('txt', JSON.stringify(valu));
-
+  $(this).siblings('.description').text(txt);
   console.log(txt);
-
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-
-
   if (!txt) {
     return;
   }
 }
 
-
+let txt = localStorage.getItem('text');
 
 saveBtn.on('click', handleTxt);
