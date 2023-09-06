@@ -50,6 +50,6 @@ $(document).ready(function() {
 }
 );
 
-let txt = localStorage.getItem('text');
+
 
 saveBtn.on('click', handleTxt);
