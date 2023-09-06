@@ -18,6 +18,14 @@ if (hour < currentHour) {
 });
  
 
+
+$(function () {
+  let txting = JSON.parse(localStorage.getItem('txt')) || [];
+  $(this).siblings('.description').val();
+  console.log(txting);
+  }
+);
+
 let saveBtn = $('.saveBtn');
 
 
@@ -26,8 +34,10 @@ function handleTxt(event)  {
   event.preventDefault();
 
  let txt = $(this).siblings('.description').val();
-  localStorage.setItem("Hour: " + block, txt);
-// let description = $(this).siblings('.description').val();
+
+  let valu = JSON.parse(localStorage.getItem('txt')) || [];
+  valu.push(txt);
+  localStorage.setItem('txt', JSON.stringify(valu));
 
   console.log(txt);
 
@@ -41,8 +51,6 @@ function handleTxt(event)  {
   }
 }
 
-let txt = localStorage.getItem('text');
-let description = $(this).siblings('.description').val();
-$(description).text = txt;
+
 
 saveBtn.on('click', handleTxt);
