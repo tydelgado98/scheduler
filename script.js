@@ -18,8 +18,6 @@ if (hour < currentHour) {
 });
  
 
-// Call the timeColor function to apply the class when the page loads
-;
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
