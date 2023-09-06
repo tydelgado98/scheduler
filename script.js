@@ -52,7 +52,14 @@ function handleTxt(event)  {
  
   event.preventDefault();
  let txt = $(this).siblings('.description').val();
-  localStorage.setItem('text', txt);
+
+ let ford = timeBlocks.forEach((timeBlocks) => {
+  localStorage.setItem(timeBlocks.id, txt);
+ });
+
+ 
+  
+  $(this).siblings('.description').text(txt);
   console.log(txt);
   if (!txt) {
     return;
