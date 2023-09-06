@@ -1,3 +1,5 @@
+/////////////////////
+// This is for the current date and time
 let today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY, h:mm A'));
 
@@ -17,9 +19,8 @@ if (hour < currentHour) {
 }
 });
  
-
-
-
+///////////////////////////////////
+// This is for saving the text in the text area to local storage
 let saveBtn = $('.saveBtn');
 
 
@@ -37,6 +38,8 @@ function handleTxt(event)  {
   alert("Saved!");
 }
 
+///////////
+// This is for retrieving the text from local storage
 function retrieveText() {
   saveBtn.each(function() {
     let block = $(this).parent().attr('id');
@@ -49,7 +52,6 @@ $(document).ready(function() {
   retrieveText();
 }
 );
-
 
 
 saveBtn.on('click', handleTxt);
