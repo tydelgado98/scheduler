@@ -1,4 +1,4 @@
-/////////////////////
+
 // This is for the current date and time
 let today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY, h:mm A'));
@@ -19,7 +19,7 @@ if (hour < currentHour) {
 }
 });
  
-///////////////////////////////////
+
 // This is for saving the text in the text area to local storage
 let saveBtn = $('.saveBtn');
 
