@@ -38,7 +38,6 @@ function handleTxt(event)  {
   alert("Saved!");
 }
 
-///////////
 // This is for retrieving the text from local storage
 function retrieveText() {
   saveBtn.each(function() {
